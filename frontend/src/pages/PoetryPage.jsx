@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-import Poytry from '../components/Poytry';
+import Poetry from '../components/Poetry';
 import { Button, Input } from 'semantic-ui-react';
 
-const PoetryPage = () => {
+const PoetryPage = ({myPoetry, setMyPoetry}) => {
   const [poetryData, setPoetryData] = useState([]);
   const [poetry, setPoetry] = useState({
       title: "",
@@ -52,7 +52,7 @@ const PoetryPage = () => {
           <h1>Search poetry by key words of title...</h1>
           <Input icon='search' onChange={(e) => e.target.value ? setSearchKeyword(e.target.value) : undefined  } placeholder='Search...' /> 
         </div> 
-      <Poytry data={poetryData}/>
+      <Poetry data={poetryData} myPoetry={myPoetry} setMyPoetry={setMyPoetry} />
     </div>
   )
 }

@@ -14,6 +14,8 @@ function App() {
    const [userStories, setUserStories] = useState([]);
    const [currentUser, setCurrentUser] = useState('');
    const [userLoged, setUserLoged] = useState(false);
+   const [myImages, setMyImages] = useState([]);
+   const [myPoetry, setMyPoetry] = useState([]);
 
     return (
       <>
@@ -22,13 +24,12 @@ function App() {
             <div className="main" >
                <Routes>
                   <Route path='/' element={<HomePage />} />
-                  <Route path='/images' element={<ImagesPage />} />
-                  <Route path='/poetry' element={<PoetryPage />} />
+                  <Route path='/images' element={<ImagesPage myImages={myImages} setMyImages={setMyImages} />} />
+                  <Route path='/poetry' element={<PoetryPage myPoetry={myPoetry} setMyPoetry={setMyPoetry} />} />
                   <Route path='/stories' element={<StoriesPage data={userStories} user={currentUser} />} />
-                  <Route path='/login' element={<Login setUserStories={setUserStories} setCurrentUser={setCurrentUser} setUserLoged={setUserLoged}/>} />
+                  <Route path='/login' element={<Login setUserStories={setUserStories} setCurrentUser={setCurrentUser} setUserLoged={setUserLoged} myPoetry={myPoetry} />} />
                   <Route path='/signup' element={<Signup />} />
-                  <Route path='/auth' element={<AuthPage stories={userStories} user={currentUser} userLoged={userLoged} />} />
-
+                  <Route path='/auth' element={<AuthPage stories={userStories} setUserStories={setUserStories} user={currentUser} userLoged={userLoged} myImages={myImages} myPoetry={myPoetry}  />} />
                </Routes>
                
             </div>

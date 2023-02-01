@@ -1,7 +1,36 @@
-import React from 'react';
-import { Table } from 'semantic-ui-react';
+import React, {useState} from 'react';
+import { useEffect } from 'react';
+import { Table, Button, Icon } from 'semantic-ui-react';
+import storyService from '../services/storyService';
 
-const Dashboard = ({data, onDelete, onUpdate, user}) => {
+const Dashboard = ({data, onDelete, onUpdate, user, setUserStories}) => {
+  const localstorage = JSON.parse(localStorage.getItem("user"));
+  const [deletedId, setDeletedId] = useState('');
+  const [dataDeleted, setDataDeleted] = useState(false);
+
+  const deleteUserStory = (storyId, userToken) => {
+    storyService.deleteStory(storyId, userToken)
+    .then(response => {
+      console.log(response);
+      setDataDeleted(true);
+    })
+    .catch(err => {
+       console.log(err);
+    })
+  }
+
+  const handleDelete = (storyId, userToken) => {
+      setDeletedId(storyId);
+      deleteUserStory(storyId, userToken);
+  }
+
+  useEffect(() => {
+    if(dataDeleted){
+      setUserStories(data.filter(d => (d._id !== deletedId)));   
+    }
+
+  }, [dataDeleted])
+
   return (
     <div>
       <h1>Welcome {user}! Your stories here... </h1>
@@ -30,7 +59,11 @@ const Dashboard = ({data, onDelete, onUpdate, user}) => {
                     <Table.Cell>{content[0]}</Table.Cell>
                     <Table.Cell>{user}</Table.Cell>
                     <Table.Cell onClick={() => {onUpdate(_id); console.log(_id)}} className='updatebtn'>✓</Table.Cell>
-                    <Table.Cell onClick={() => {onDelete(_id); console.log(_id)}} className='deletebtn'>x</Table.Cell>
+                    <Table.Cell  className='deletebtn'>
+                      <Button icon onClick={() => handleDelete (_id, localstorage.token)}>
+                        <Icon name='trash' color='red' />
+                      </Button>
+                    </Table.Cell>
                 </Table.Row>
                 ))}
             </Table.Body>

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Images from "../components/Images";
 import { Button, Input } from 'semantic-ui-react';
 
-const ImagesPage = () => {
+const ImagesPage = ({myImages, setMyImages}) => {
     const [images, setImages] = useState([]);
     const [pagenumber, setPagenumber] = useState(1);
     const [searchKeyword, setSearchKeyword] = useState('');
@@ -90,8 +90,8 @@ const ImagesPage = () => {
         <div style={{display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "center", margin: "20px 0", border: "1px solid rgba(0,0,0,.15)", borderRadius: '5PX'}}>
             {images ? 
             (
-                images.map((story) => (
-                    <Images story={story} key={story.id} />
+                images.map((image) => (
+                    <Images image={image} key={image.id} myImages={myImages} setMyImages={setMyImages} />
                 ))
             ) : (
               <h2>Loading...</h2>

@@ -53,10 +53,15 @@ code {
 .poetry_card {
   text-align: center;
   width: 400px!important;
-  height: 300px;
+  height: 350px;
   overflow: hidden;
   padding: 50px;
   margin: 10px 0!important;
+}
+
+.poetry_add_btn{
+  margin-bottom: 30px!important;
+  margin-top: 10px;
 }
 
 .ui.card>.content>.header:not(.ui){
@@ -90,4 +95,10 @@ code {
 
 .story_box .ui.card>.extra {
   padding: 20px;
+}
+
+.icon-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
