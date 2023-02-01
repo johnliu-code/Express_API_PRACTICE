@@ -54,6 +54,11 @@ MERN STACK PROJECT GUIDE
 
 ![image](https://user-images.githubusercontent.com/79877649/215950018-b2d23e23-1837-4a8b-b0be-9f7612242af3.png)
 
+7. Add, update, delete user data
+![image](https://user-images.githubusercontent.com/79877649/216168029-ca5e5e51-473c-4cfb-bffd-fd425f68a23b.png)
+
+
+
 
 
 
