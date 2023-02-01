@@ -1,0 +1,93 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.main {
+  padding: 80px;
+}
+
+.logo {
+  margin-left: -15px;
+}
+
+/* resize image to fit area */
+.ui.card>.image>img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: 50% 30%;
+}
+
+/** Fix menu padding**/
+.ui.container {
+  width: 100%;
+  padding: 0 80px;
+}
+
+/* @media only screen and (min-width: 1200px){
+
+} */
+
+.poetry_box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 20px 0;
+  padding: 20px;
+  background: rgba(19, 180, 48, 0.5);
+  border: 1px solid rgba(0,0,0,.15); 
+  border-radius: 5px;
+}
+
+.poetry_card {
+  text-align: center;
+  width: 400px!important;
+  height: 300px;
+  overflow: hidden;
+  padding: 50px;
+  margin: 10px 0!important;
+}
+
+.ui.card>.content>.header:not(.ui){
+  font-size: 1.2rem!important;
+  margin: 1rem;
+}
+
+.ui.card .meta, .ui.cards>.card .meta {
+  margin-bottom: 1rem;
+}
+
+.story_title {
+  margin: 1rem 0!important;
+}
+
+.story_title .content {
+  text-align: center!important;
+  padding: 50px;
+}
+
+.story_box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid rgba(0,0,0,.15); 
+  border-radius: 5px;
+}
+
+.story_box .ui.card>.extra {
+  padding: 20px;
+}

@@ -1,0 +1,63 @@
+[
+    {
+        "_id": "63d83589248c63d91295f357",
+        "title": "Ozymandias",
+        "author": "Percy Bysshe Shelley",
+        "content": [
+            "I met a traveller from an antique land",
+            "Who said: \"Two vast and trunkless legs of stone",
+            "Stand in the desert. Near them on the sand,",
+            "Half sunk, a shattered visage lies, whose frown",
+            "And wrinkled lip and sneer of cold command",
+            "Tell that its sculptor well those passions read",
+            "Which yet survive, stamped on these lifeless things,",
+            "The hand that mocked them and the heart that fed.",
+            "And on the pedestal these words appear:",
+            "'My name is Ozymandias, King of Kings:",
+            "Look on my works, ye mighty, and despair!'",
+            "Nothing beside remains. Round the decay",
+            "Of that colossal wreck, boundless and bare,",
+            "The lone and level sands stretch far away\"."
+        ],
+        "imgurl": "https://images.unsplash.com/photo-1507133750040-4a8f57021571?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzOTE4Njh8MHwxfHNlYXJjaHwxMHx8Y29mZmVlfGVufDB8fHx8MTY3NTA5NTY1OQ&ixlib=rb-4.0.3&q=80&w=1080",
+        "instagram": "https://instagram.com/nate_dumlao",
+        "createdAt": "2023-01-30T21:24:25.366Z",
+        "updatedAt": "2023-01-30T21:24:25.366Z",
+        "__v": 0
+    },
+    {
+        "_id": "63d8365e248c63d91295f359",
+        "title": "Now I knew I lost her --Updated",
+        "author": "Emily Dickinson",
+        "content": [
+            "Now I knew I lost her --",
+            "Not that she was gone --",
+            "But Remoteness travelled",
+            "On her Face and Tongue.",
+            "",
+            "Alien, though adjoining",
+            "As a Foreign Race --",
+            "Traversed she though pausing",
+            "Latitudeless Place.",
+            "",
+            "Elements Unaltered --",
+            "Universe the same",
+            "But Love's transmigration --",
+            "Somehow this had come --",
+            "",
+            "Henceforth to remember",
+            "Nature took the Day",
+            "I had paid so much for --",
+            "His is Penury",
+            "Not who toils for Freedom",
+            "Or for Family",
+            "But the Restitution",
+            "Of Idolatry."
+        ],
+        "imgurl": "https://images.unsplash.com/photo-1518057111178-44a106bad636?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzOTE4Njh8MHwxfHNlYXJjaHwxfHxjb2ZmZWV8ZW58MHx8fHwxNjc1MDk1NjU5&ixlib=rb-4.0.3&q=80&w=1080",
+        "instagram": "https://instagram.com/clay.banks",
+        "createdAt": "2023-01-30T21:27:58.379Z",
+        "updatedAt": "2023-01-30T21:38:47.933Z",
+        "__v": 0
+    }
+]
