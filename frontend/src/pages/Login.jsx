@@ -34,7 +34,8 @@ const Login = ({ setCurrentUser, setUserLoged, setUserStories }) => {
     }
 
     setLoginUser(userData);
-    setHasuserData(true);
+    // setHasuserData(true);
+    handleLogin(loginUser);
   }
 
   const handleLogin = (user) => {
@@ -59,12 +60,13 @@ const Login = ({ setCurrentUser, setUserLoged, setUserStories }) => {
   }
 
   useEffect(() => {
-    if(hasuserData){
+    if(localstorage){
       handleLogin(loginUser);
     }
 
     if(authed) {
       if(localstorage){
+        setCurrentUser({})
         getStoriesData(localstorage.token);
         setCurrentUser(localstorage.username); 
         setUserLoged(true); 

@@ -5,7 +5,7 @@ const Story = ({stories, user}) => {
   return (
     <div className='story_box'>
        {stories? stories.map((story, i) => (
-          <Card style={{margin: "20px"}} key={i}>
+          <Card className='story_card' style={{margin: "20px"}} key={i}>
             <Image src={story.imgurl} wrapped ui={false} />
             <Card.Content>
             <Card.Header className='story_title'>Title: {story.title}</Card.Header>

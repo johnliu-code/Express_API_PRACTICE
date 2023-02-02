@@ -5,16 +5,19 @@ import { useNavigate } from 'react-router-dom';
 
 function Images({image, myImages, setMyImages}) {
     const navigate = useNavigate();
+    const [imgChanged, setImgChanged] = useState(false);
+
     const handleAddImage = (img) => {
-        if(img){
-            setMyImages(img);        
-        }
-        
+        setMyImages(img); 
+        setImgChanged(true);    
     }
 
+    //Navigate to dashboard after add image
     useEffect(() => {
-        setMyImages(image);
-    }, [])
+        if(imgChanged){
+            navigate('/auth');
+        }
+    }, [imgChanged])
 
   return (
     <>

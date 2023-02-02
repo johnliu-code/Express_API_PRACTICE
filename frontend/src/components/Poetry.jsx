@@ -1,20 +1,22 @@
-import React from 'react';
-import { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Card, Button, Icon } from 'semantic-ui-react';
+import { useNavigate } from 'react-router-dom';
 
 const Poytry = ({data, myPoetry, setMyPoetry}) => {
+  const navigate = useNavigate();
+  const [poeChanged, setPoeChanged] = useState(false);
+
   const handleAddPoetry = (poe) =>{
-     if(poe){
-      setMyPoetry(poe);
-      console.log(myPoetry);
-     }
+    setMyPoetry(poe);
+    setPoeChanged(true);
   }
 
-
-
+ //Navigate to dashboard after add poetry
   useEffect(() => {
-    setMyPoetry(data[0]);
-  }, [])
+    if(poeChanged){
+      navigate('/auth');
+    }   
+  }, [poeChanged])
 
   return (
     <div className='poetry_box'>

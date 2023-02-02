@@ -62,30 +62,3 @@ const StoryService = {
 }
 
 export default StoryService
-
-
-// import http from "../http-common";
-
-// class StoryDataService {
-//   getStories() {
-//     return http.get("/stories");
-//   }
-
-//   getStoryById(id) {
-//     return http.get(`/stories/${id}`);
-//   }
-
-//   create(data) {
-//     return http.post("/stories", data);
-//   }
-
-//   update(id, data) {
-//     return http.put(`/stories/${id}`, data);
-//   }
-
-//   delete(id) {
-//     return http.delete(`/stories/${id}`);
-//   }
-// }
-
-// export default new StoryDataService();

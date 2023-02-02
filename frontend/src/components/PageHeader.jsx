@@ -4,7 +4,7 @@ import { Container, Image, Menu } from 'semantic-ui-react';
 import userService from '../services/userService';
 
 const PageHeader = ({user, setUserLoged}) => {
-  // const navigate = useNavigate();
+  const localstorage = JSON.parse(localStorage.getItem("user"));
   const onLogout = () => {
     userService.logout()
        .then(response => {
@@ -29,7 +29,7 @@ const PageHeader = ({user, setUserLoged}) => {
                 <Link to='/stories' className='item'>Stories</Link>
 
                   <Menu.Menu position='right'>
-                    { user ? 
+                    { localstorage ? 
                     (
                       <>
                         <Link to='/auth' className='item'>Dashboard</Link>

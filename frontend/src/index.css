@@ -20,14 +20,6 @@ code {
   margin-left: -15px;
 }
 
-/* resize image to fit area */
-.ui.card>.image>img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  object-position: 50% 30%;
-}
-
 /** Fix menu padding**/
 .ui.container {
   width: 100%;
@@ -38,6 +30,7 @@ code {
 
 } */
 
+/* Poetry part */
 .poetry_box {
   display: flex;
   justify-content: space-around;
@@ -64,6 +57,14 @@ code {
   margin-top: 10px;
 }
 
+/* resize image to fit area */
+.ui.card>.image>img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: 50% 30%;
+}
+
 .ui.card>.content>.header:not(.ui){
   font-size: 1.2rem!important;
   margin: 1rem;
@@ -84,13 +85,19 @@ code {
 
 .story_box {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   margin: 20px 0;
   padding: 20px;
   border: 1px solid rgba(0,0,0,.15); 
   border-radius: 5px;
+}
+
+.story_box .story_card,  .story_box .ui.card{
+  width: 380px;
+  height: 550px;
+  overflow: hidden;
 }
 
 .story_box .ui.card>.extra {
@@ -101,4 +108,45 @@ code {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+/** Add data part **/
+
+.add_data_box {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+
+.search_line {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  margin: 15px 0;
+  width: 50%;
+}
+
+.add_data_box h5{
+  margin-bottom: 8px;
+  margin-left: 15px;
+}
+
+.add_data_btn {
+   margin: 20px 0!important;
+   /* float: right; */
+   margin-bottom: 100px;
+   cursor: pointer;
+}
+
+.data_list {
+  position: relative;
+  margin-top: 20px;
+}
+
+.data_noties {
+  font-size: 12px;
+  color: crimson;
+  font-weight: 200;
+  margin-left: 5px;
 }

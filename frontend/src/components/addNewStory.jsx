@@ -1,13 +1,14 @@
 import React from 'react';
 import { useEffect,useState } from 'react';
-import { Table, Input, Image } from 'semantic-ui-react';
-import Images from "../components/Images";
+import { Icon, Button, Label } from 'semantic-ui-react';
 import storyService from '../services/storyService';
+import { Link, useNavigate } from 'react-router-dom';
 
 const AddNewStory = ({userLoged, myImages, myPoetry, setDataUdated, stories, setUserStories}) => {
     const localstorage = JSON.parse(localStorage.getItem("user"));
     const [id, setId] = useState('');
     const [hasNewData, setHasNewData] = useState(false);
+    const [dataAdded, setDataAdded] = useState(false);
 
     const [newstory, setNewstory] = useState({
         user: "", 
@@ -37,6 +38,7 @@ const AddNewStory = ({userLoged, myImages, myPoetry, setDataUdated, stories, set
         storyService.createStory(story, userToken)
         .then(response => {
           console.log(response);
+          setDataAdded(true);
         })
         .catch(err => {
            console.log(err);
@@ -61,45 +63,48 @@ const AddNewStory = ({userLoged, myImages, myPoetry, setDataUdated, stories, set
     <div>
         <h1>Add you new story with collected images and poetry....</h1>
 
-       {myImages ? (
-           <p>{myImages.alt_description}</p>
-       ): undefined}
+        <div className='add_data_box'>
+            <div className='search_line'>
+                <div>
+                    <Link to="/images">
+                        <Button as='div' labelPosition='right'>
+                        <Button color='teal'>
+                            <Icon name='image' />
+                            Serach 
+                        </Button>
+                        <Label basic color='teal' pointing='left'>
+                            images
+                        </Label>
+                        </Button>                         
+                    </Link>              
+                </div> 
+                {myImages ? (
+                    <h5>Image alt: { !dataAdded ? myImages.alt_description : undefined } <span className='data_noties'> {dataAdded ? 'Data added...' : (myImages.alt_description ? 'Find one image...' : undefined)} </span></h5>
+                ): undefined}               
+            </div>
 
-       <br></br>
-       {myPoetry ? (
-            <p>{myPoetry.title}</p>
-       ): undefined}
+            <div className='search_line'>
+                <div>
+                    <Link to="/poetry">
+                        <Button as='div' labelPosition='right'>
+                        <Button basic color='blue'>
+                            <Icon name='music' />
+                            Search
+                        </Button>
+                        <Label basic color='blue' pointing='left'>
+                            Poetry
+                        </Label>
+                        </Button>                          
+                    </Link>
+              
+                </div>  
+                {myPoetry ? (
+                        <h5>Poetry title: { !dataAdded ? myPoetry.title : undefined } <span className='data_noties'> {dataAdded ? 'Data added...' : (myPoetry.title ? 'Find one poetry...' : undefined)} </span></h5>
+                ): undefined}                             
+            </div>
 
-        <button className="ui button" onClick={handleAdd} style={{margin: "20px 0"}}>Add new story</button>
-
-        {/* <Table sortable celled fixed>
-            <Table.Header>
-                <Table.Row>
-                    <Table.HeaderCell>Alt</Table.HeaderCell>                  
-                    <Table.HeaderCell>ImgUrl</Table.HeaderCell>
-                    <Table.HeaderCell>Img</Table.HeaderCell>
-                    <Table.HeaderCell>Instagram</Table.HeaderCell>
-                    <Table.HeaderCell>Update</Table.HeaderCell>
-                    <Table.HeaderCell>Delete</Table.HeaderCell>
-                    <Table.HeaderCell>Add to Story</Table.HeaderCell>
-                </Table.Row>
-            </Table.Header>
-            <Table.Body>
-                { myImages ? myImages.toArray().map(({alt_description, imgurl, instagram }, i) => (
-                <Table.Row key={i}>
-                    <Table.Cell>{alt_description}</Table.Cell>
-                    <Table.Cell>{imgurl}</Table.Cell>
-                    <Table.Cell><Image src={imgurl} wrapped ui={false}  size='mini' /></Table.Cell>
-                    <Table.Cell>{instagram}</Table.Cell>
-                    <Table.Cell>{imgurl}</Table.Cell>
-                    <Table.Cell className='updatebtn'>✓</Table.Cell>
-                    <Table.Cell className='deletebtn'>x</Table.Cell>
-                    <Table.Cell className='deletebtn'>+</Table.Cell>
-                </Table.Row>
-                )) : undefined }
-            </Table.Body>
-        </Table> */}
-        {/* </div> */}
+        </div>
+        <Button color='teal' className="ui button add_data_btn" onClick={handleAdd}>Add New Story</Button>
     </div>
   )
 }
