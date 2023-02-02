@@ -150,3 +150,12 @@ code {
   font-weight: 200;
   margin-left: 5px;
 }
+
+/** Dashboard table align text **/
+.updatebtn, .deletebtn {
+  text-align: center!important;
+}
+
+.ui.celled.table tr th {
+  text-align: center;
+}

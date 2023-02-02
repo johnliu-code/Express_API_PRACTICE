@@ -1,0 +1,53 @@
+【MERN STACK Photo stories blog project】
+
+--1. MongoDb, Express, React, Node, API project
+--2.JWT TOKEN Authenlization 
+--3. Semantic UI React for design
+--4. CRUD operations with database json type
+
+Problems for solving:
+
+%%% BACKEND %%%
+
+1. Connect app backend to mongodb database: mongoose (https://mongoosejs.com/)
+
+2. Data schema for objects of users and stories: mongoose
+
+3. CRUD operations: Create, Read, Update, Delete, or Find data from database: mongoose
+
+4. Create API HTTP urls with router : Node/Express (https://expressjs.com/)
+
+5. Protect user's data by matching login user authentication: JWT (https://jwt.io/) 
+
+6. Hide user ID or Password by token: JWT, bcryptjs (https://www.npmjs.com/package/bcryptjs)
+ 
+7. HTTP request from multiple platforms: CORS https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
+
+8. To use async await call in express: express-async-handler (https://www.npmjs.com/package/express-async-handler)
+
+9. Handlling request response http call with express: middleware (https://expressjs.com/en/guide/using-middleware.html)
+
+10. Organizing project with MVC structure: frontend as Views, backend with models and controllers
+
+%%% FRONTEND %%%
+
+1. Connnect to backend server and database : axios (https://axios-http.com/docs/intro)
+
+2. CRUD operations with frontend states data and interact with backend: 
+
+3. Handlling states with react hooks:
+
+4. Passing data through pages and components:
+
+5. Keeping user login with localStorage and token:
+
+6. Redirect to page or component after some actions of user: react-router-dom, link, navigate
+
+7. Conditional switch content results to display: turnner oprator (condition ? <state1> : <state2>)
+
+8. Save states or data to array: setStories([...stories, newStory])
+
+9. Pagination: with states and event handller
+
+10. Layout design with semantic UI: icon buttons, flex list layout, equal height...
+

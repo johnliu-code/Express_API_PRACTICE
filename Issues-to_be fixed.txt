@@ -1,0 +1,11 @@
+Issues to be fixed:
+
+1. Login first time return 400, and second time seccuss;
+
+2. Update button click will generate error "changed element to no controlled...";
+
+3. Update first time not works and second time works;
+
+4. After update not chaning the page data up to date;
+
+5. Delete first time works and update the page list, but, secod time it did deleted but not up to date the list;

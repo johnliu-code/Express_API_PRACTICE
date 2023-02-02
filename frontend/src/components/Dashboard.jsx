@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { Table, Button, Icon } from 'semantic-ui-react';
 import storyService from '../services/storyService';
 
-const Dashboard = ({data, onDelete, onUpdate, user, setUserStories}) => {
+const Dashboard = ({data, setWillUpdateData , setWillDoUpdate, user, setUserStories}) => {
   const localstorage = JSON.parse(localStorage.getItem("user"));
   const [deletedId, setDeletedId] = useState('');
   const [dataDeleted, setDataDeleted] = useState(false);
@@ -23,6 +23,11 @@ const Dashboard = ({data, onDelete, onUpdate, user, setUserStories}) => {
       setDeletedId(storyId);
       deleteUserStory(storyId, userToken);
   }
+
+  const handleUpdate = (story) => {
+    setWillDoUpdate(true);
+    setWillUpdateData (story);
+}
 
   useEffect(() => {
     if(dataDeleted){
@@ -48,21 +53,21 @@ const Dashboard = ({data, onDelete, onUpdate, user, setUserStories}) => {
                 </Table.Row>
             </Table.Header>
             <Table.Body>
-                {data.map(({_id, user, title, author, imgurl, content, instagram }, i) => (
+                {data.map((story, i) => (
                 <Table.Row key={i}>
-                    <Table.Cell>{title}</Table.Cell>
-                    <Table.Cell>{author}</Table.Cell>
-                    <Table.Cell>{instagram}</Table.Cell>
-                    <Table.Cell>{imgurl}</Table.Cell>
-                    <Table.Cell>{content[0]}</Table.Cell>
-                    <Table.Cell>{user}</Table.Cell>
+                    <Table.Cell>{story.title}</Table.Cell>
+                    <Table.Cell>{story.author}</Table.Cell>
+                    <Table.Cell>{story.instagram}</Table.Cell>
+                    <Table.Cell>{story.imgurl}</Table.Cell>
+                    <Table.Cell>{story.content[0]}</Table.Cell>
+                    <Table.Cell>{story.user}</Table.Cell>
                     <Table.Cell className='updatebtn'>
-                      <Button icon onClick={() => handleDelete (_id, localstorage.token)}>
+                      <Button icon onClick={() => handleUpdate(story)}>
                         <Icon name='refresh' color='green' />
                       </Button>
                     </Table.Cell>
                     <Table.Cell  className='deletebtn'>
-                      <Button icon onClick={() => handleDelete (_id, localstorage.token)}>
+                      <Button icon onClick={() => handleDelete (story._id, localstorage.token)}>
                         <Icon name='trash' color='red' />
                       </Button>
                     </Table.Cell>
